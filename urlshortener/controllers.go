@@ -49,6 +49,14 @@ func shortenURL(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
+	w.Header().Set("Content-Type", "text/html")
 	w.WriteHeader(statusCode)
+
+	log.Printf("Shortening %s to %s", resp, message)
+
 	w.Write([]byte(message))
+}
+
+func redirectIndex(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "./index.html", 307)
 }
