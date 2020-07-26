@@ -1,6 +1,6 @@
 package main
 
-import "urlshortener"
+import "github.com/EoinDoherty/urlshortener/urlshortener"
 
 func main() {
 	urlshortener.InitServer()
